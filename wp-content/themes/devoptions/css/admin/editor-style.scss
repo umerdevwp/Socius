@@ -1,0 +1,17 @@
+@import "../../scss/mixins";
+@import "../../scss/variables";
+@import "../../scss/typography";
+@import "../../scss/buttons";
+
+/* Make Gutenberg width larger by default */
+@media( min-width: 768px ) {
+    .wp-block {
+        max-width: 80%;
+    }
+}
+
+@media(min-width: 480px) {
+    a.btn+a.btn{
+        margin-left: 1rem;
+    }
+}

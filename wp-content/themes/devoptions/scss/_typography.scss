@@ -1,0 +1,179 @@
+html {
+    font-size: 15px;
+    
+    @include md {font-size: 20px;}
+}
+
+body {
+    @include primary-font;
+    font-size: 1rem;
+    font-weight: 400;
+    color: $black;
+    line-height: 1.55em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin:0;
+}
+
+p, ol, ul {
+    margin-bottom:20px;
+    font-size: 1rem;
+}
+.upper {text-transform: uppercase;}
+.caps {text-transform: capitalize;}
+.light {font-weight: 300;}
+.semi-bold {font-weight: 600;}
+.bold {font-weight: 700;}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 400;
+    margin-bottom: 20px;
+    line-height: 1.125em;
+    letter-spacing: -0.02em;
+}
+
+h1, .h1 {
+    color: $blue;
+    font-size: 17px;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+
+    @include sm {font-size: 19px;}
+
+    @include md {font-size: 29px;}
+
+    @include lg {font-size: 31px;}
+}
+h2, .h2 {
+    color: $blue;
+    font-size: 15px;
+    font-weight: 700;
+
+    @include sm {font-size: 17px;}
+
+    @include md {font-size: 27px;}
+
+    @include lg {font-size: 28px;}
+}
+
+h3, .h3 {
+    color: $black;
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.1875em;
+
+    @include sm {font-size: 15px;}
+
+    @include md {font-size: 25px;}
+}
+
+h4, .h4 {
+    color: $black;
+    font-size: 10px;
+    font-weight: 600;
+    line-height: 1.3125em;
+
+    @include sm {font-size: 12px;}
+
+    @include md {font-size: 22px;}
+}
+
+h5, .h5 {
+    color: $black;
+    font-size: 9px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: normal;
+
+    @include sm {font-size: 11px;}
+
+    @include md {font-size: 13px;}
+
+    @include lg {font-size: 17px;}
+}
+
+h6, .h6 {
+    color: $black;
+    font-size: 8px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: normal;
+
+    @include sm {font-size: 9px;}
+
+    @include md {font-size: 11px;}
+
+    @include lg {font-size: 15px;}
+}
+
+
+@font-face {
+    font-family: 'Font Awesome 5 Pro';
+    font-style: normal;
+    font-weight: 300;
+    font-display: auto;
+    src: url('fonts/fontawesome/fa-light-300.eot');
+    src: url('fonts/fontawesome/fa-light-300.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome/fa-light-300.woff2') format('woff2'), url('fonts/fontawesome/fa-light-300.woff') format('woff'),
+    url('fonts/fontawesome/fa-light-300.ttf') format('truetype'), url('fonts/fontawesome/fa-light-300.svg#fontawesome') format('svg');
+}
+
+.fal {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Pro';
+    font-style: normal;
+    font-weight: 400;
+    font-display: auto;
+    src: url('fonts/fontawesome/fa-regular-400.eot');
+    src: url('fonts/fontawesome/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome/fa-regular-400.woff2') format('woff2'),
+    url('fonts/fontawesome/fa-regular-400.woff') format('woff'),
+    url('fonts/fontawesome/fa-regular-400.ttf') format('truetype'),
+    url('fonts/fontawesome/fa-regular-400.svg#fontawesome') format('svg');
+}
+
+.far {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Pro';
+    font-style: normal;
+    font-weight: 900;
+    font-display: auto;
+    src: url('fonts/fontawesome/fa-solid-900.eot');
+    src: url('fonts/fontawesome/fa-solid-900.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome/fa-solid-900.woff2') format('woff2'),
+    url('fonts/fontawesome/fa-solid-900.woff') format('woff'),
+    url('fonts/fontawesome/fa-solid-900.ttf') format('truetype'),
+    url('fonts/fontawesome/fa-solid-900.svg#fontawesome') format('svg');
+}
+
+.fa,
+.fas {
+    font-family: 'Font Awesome 5 Pro';
+    font-weight: 900;
+}
+
+@font-face {
+    font-family: 'Font Awesome 5 Brands';
+    font-style: normal;
+    font-weight: normal;
+    font-display: auto;
+    src: url('fonts/fontawesome/fa-brands-400.eot');
+    src: url('fonts/fontawesome/fa-brands-400.eot?#iefix') format('embedded-opentype'),
+    url('fonts/fontawesome/fa-brands-400.woff2') format('woff2'),
+    url('fonts/fontawesome/fa-brands-400.woff') format('woff'),
+    url('fonts/fontawesome/fa-brands-400.ttf') format('truetype'),
+    url('fonts/fontawesome/fa-brands-400.svg#fontawesome') format('svg');
+}
+
+.fab {
+    font-family: 'Font Awesome 5 Brands';
+}

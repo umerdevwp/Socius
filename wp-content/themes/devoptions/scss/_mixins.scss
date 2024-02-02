@@ -1,0 +1,137 @@
+//Font size conversion for line-height and letter-spacing
+@mixin font-size($remsize: 1, $lineheight: 1.5) {
+  font-size: ($remsize * 16) + px;
+  font-size: $remsize + rem;
+  line-height: $lineheight;
+}
+
+//Fonts
+@mixin primary-font {
+    font-family: 'Source Sans Pro', sans-serif;
+}
+@mixin secondary-font {
+  font-family: 'Roboto', sans-serif;
+}
+
+//Effects
+@mixin transition ($speed) {
+    -webkit-transition: all $speed ease-in-out;
+    transition: all $speed ease-in-out;
+}
+@mixin scale ($size) {
+    -webkit-transform: scale($size);
+    transform: scale($size);
+}
+@mixin skew($deg) {
+    -webkit-transform: skew($deg);
+    transform: skew($deg);
+}
+@mixin translate ($x,$y) {
+    -webkit-transform: translate($x,$y);
+    transform: translate($x,$y);
+}
+@mixin translate3d($x,$y,$z) {
+    -webkit-transform: translate3d($x,$y,$z);
+    transform: translate3d($x,$y,$z);
+}
+@mixin scale($amount) {
+    -webkit-transform: scale($amount);
+    transform: scale($amount);
+}
+@mixin rotate($amount) {
+    -webkit-transform: rotate($amount);
+    transform: rotate($amount);
+}
+@mixin box-shadow ($horizontal, $vertical, $blur, $color) {
+    -webkit-box-shadow: $horizontal $vertical $blur $color;
+    box-shadow: $horizontal $vertical $blur $color;
+}
+@mixin opacity ($amount) {
+    //filter: alpha(opacity=$amount*100);
+    opacity: $amount;
+}
+@mixin background($position: center, $size: cover, $repeat: no-repeat) {
+    background-position: $position;
+    background-size: $size;
+    background-repeat: $repeat;
+}
+@mixin border-radius($radius:0) {
+    -webkit-border-radius: $radius;
+    border-radius: $radius;
+}
+@mixin valign($top:50%,$position:relative){
+  position: $position;
+  top: $top;
+  transform: translateY(-50%);
+}
+@mixin list($padding:0,$margin:0) {
+  padding:$padding;
+  margin:$margin;
+  list-style: none;
+}
+
+//Layout
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+//Media Queries
+@mixin xs {
+  @media (min-width: 375px) {
+    @content;
+  }
+}
+@mixin sm-max {
+  @media (max-width: 479px) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: 480px) {
+    @content;
+  }
+}
+@mixin ssm {
+  @media (min-width: 600px) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: 992px) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin xxl {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin xxxl {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}
+@mixin yl {
+  @media (min-width: 1800px) {
+    @content;
+  }
+}
+@mixin zl {
+  @media (min-width: 1920px) {
+    @content;
+  }
+}

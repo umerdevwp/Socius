@@ -1,0 +1,47 @@
+$red	    :#e10729;
+$red-bright :#ff0000;
+$red-dark   :#aa0303;
+$blue	    :#002052;
+$blue-2	    :#00306d;
+$blue-dark  :#001638;
+$blue-mid   :#003b85;
+$blue-light	:#00a1ed;
+$aqua       :rgba(0, 161, 237, 0.47);
+$gray		:#878787;
+$gray-xdark	:#1f1f1f;
+$gray-dark	:#333;
+$yellow     :#ffa200;
+$white 		:#fff;
+$black 		:#000;
+
+.red {color: $red;}
+.red-bright {color: $red-bright;}
+.red-dark {color: $red-dark;}
+.blue {color: $blue;}
+.blue-2 {color: $blue-2;}
+.blue-dark {color: $blue-dark;}
+.blue-mid {color: $blue-mid;}
+.blue-light {color: $blue-light;}
+.aqua {color: $aqua;}
+.gray {color: $gray;}
+.gray-xdark {color: $gray-xdark;}
+.gray-dark {color: $gray-dark;}
+.yellow {color: $yellow;}
+.white {color: $white;}
+.black {color: $black;}
+
+.bg-red {background-color: $red;}
+.bg-red-bright {background-color: $red-bright;}
+.bg-red-dark {background-color: $red-dark;}
+.bg-blue {background-color: $blue;}
+.bg-blue-2 {background-color: $blue-2;}
+.bg-blue-dark {background-color: $blue-dark;}
+.bg-blue-mid {background-color: $blue-mid;}
+.bg-blue-light {background-color: $blue-light;}
+.bg-aqua {background-color: $aqua;}
+.bg-gray {background-color: $gray;}
+.bg-gray-xdark {background-color: $gray-xdark;}
+.bg-gray-dark {background-color: $gray-dark;}
+.bg-yellow {background-color: $yellow;}
+.bg-white {background-color: $white;}
+.bg-black {background-color: $black;}

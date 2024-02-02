@@ -1,0 +1,105 @@
+.mobile-app-nav {
+    display: flex;
+    justify-content:space-evenly;
+    flex-wrap:nowrap;
+    flex-direction: row;
+    position: fixed;
+    align-items: center;
+    height:46px;
+    left: 0;
+    bottom:0;
+    width:100%;
+    padding:5px;
+    z-index: 20;
+    
+    &:after {
+        position: absolute;
+        content:'';
+        width: 100%;
+        height:100%;
+        left:0;
+        top:0;
+        background-color: $red;
+        z-index: 20;
+    }
+    
+    .mobile-button {
+        cursor: pointer;
+        position: relative;
+        z-index: 100;
+        flex:0 0 50%;
+        max-width: 50%;
+        text-align: center;
+        
+        a {display: block;}
+        
+        span {
+            color: $white;
+            font-size: 15px;
+            font-weight: 700;
+            padding-left: 10px;
+            
+            @include md {font-size: 1em;}
+        }
+    }
+    
+    .mobile-app-services {
+        position: fixed;
+        left: 0;
+        right:0;
+        bottom: -200px;
+        z-index: 10;
+        display: flex;
+        min-height: 20px;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        border-top:1px solid $aqua;
+        @include transition(0.5s);
+        
+        @include sm {align-items: stretch;}
+        
+        a {
+            color:$white;
+            display: flex;
+            flex:0 0 50%;
+            max-width: 50%;
+            flex-wrap: nowrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            padding:15px 10px;
+            
+            @include sm {
+                flex:0 0 20%;
+                max-width: 20%;
+                flex-direction: column;
+                justify-content: center;
+                border-left: 1px solid $aqua;
+            }
+            
+            img {
+                width:26px;
+                
+                @include sm {
+                    width: auto !important;
+                    height: 24px;
+                }
+            }
+            
+            .mobile-button-text {
+                padding-left:10px;
+                
+                @include sm {padding-left: 0;}
+            }
+            
+            &.mobile-button-1, &.mobile-button-2 {border-top: none;}
+            
+            &.mobile-button-1 {
+                @include sm {border-left: none;}
+            }
+        }
+        
+        &.active {bottom:46px;}
+    }
+}

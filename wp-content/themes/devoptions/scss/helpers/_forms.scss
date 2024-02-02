@@ -1,0 +1,340 @@
+form {
+    width: 100%;
+    
+    .form-group {
+        max-width: 100%;
+        width:100%;
+    }
+    .form-group {
+        
+        &.submit {
+            
+            .btn {width:100%;}
+            
+        }
+        
+    }
+	.form-control {
+		@include border-radius(0);
+        font-size: 14px;
+        text-transform: uppercase;
+        border: 1px solid transparent;
+        
+        @include lg {height:46px;}
+	}
+	.select {
+		position:relative;
+		&:after {
+			cursor: pointer;
+		    pointer-events: none;
+		    font-family: 'Font Awesome 5 Pro';
+		    content: '\f0d7';
+            font-weight: 900;
+		    font-size: 16px;
+		    color: $gray;
+		    display: block;
+		    position: absolute;
+		    text-align: center;
+		    right: 12px;
+		    top: 50%;
+		    @include translate(0,-50%);
+		}
+		select {
+			-webkit-appearance:none;
+			-moz-appearance:none;
+			padding-right:16px;
+			color:$gray-dark;
+		}
+		select::-ms-expand {
+		    display: none;
+		}
+	}
+	.padding {
+		padding:0 1em;
+	}
+	.form-check {
+		&.form-check-inline {
+			display: inline-block;
+			margin-right:5px;
+			* {
+				cursor:pointer;
+			}
+			label {
+				display: inline-block;
+			    margin:0 5px 0 0;
+			    font-weight:normal;
+			}
+			input {
+				position: static;
+			    margin:0 3px 0 0;
+			}
+		}
+	}
+    
+    .checkboxes {
+        @include list;
+        
+        &.two-columns {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            
+            li {
+                flex:0 0 50%;
+                max-width: 50%;
+            }
+        }
+    }
+	input {
+		color:$gray-dark;
+	}
+	input.form-control::-webkit-input-placeholder, textarea.form-control::-webkit-input-placeholder { color: $gray-dark;}
+	input.form-control::-moz-placeholder, textarea.form-control::-moz-placeholder { color: $gray-dark;	}
+	input.form-control:-moz-placeholder, textarea.form-control:-moz-placeholder { color: $gray-dark;	}
+	input.form-control:-ms-input-placeholder, textarea.form-control:-ms-input-placeholder { color: $gray-dark;	}
+}
+
+.header-form, .selector-form,
+.sidebar-form {
+    
+    form {
+        
+        .form-group {
+            @include lg {
+                margin-bottom:8px;
+                padding:0 5px;
+            }
+            
+            &.whole {
+                flex:0 0 100%;
+                max-width: 100%;
+            }
+            
+            &.half {
+                flex:0 0 50%;
+                max-width: 50%;
+            }
+            
+            &.special-select {
+                .form-control {
+                    color:$white;
+                    font-size: 30px;
+                    font-weight: 300;
+                    height: 60px;
+                    border: none;
+                    background-color: $blue-2;
+                }
+                
+                &:after {
+                    color:$white;
+                    font-size: 30px;
+                    right:20px;
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+.sidebar-form {
+    
+    form {
+        
+        .form-group {
+            
+            &.special-select {
+                .form-control {
+                    font-size: 18px;
+                    height: 50px;
+                }
+                
+                &:after {
+                    font-size: 24px;
+                }
+            }
+            
+        }
+        
+    }
+    
+}
+
+.entry-content {
+    
+    form {
+        
+        .form-control {
+            border: 1px solid rgba(gray,0.6);
+        }
+        
+    }
+    
+}
+
+.bVErrMsgContainer {
+	z-index:5;
+}
+.bvalidator_errmsg {
+	left:0 !important;
+	top:0 !important;
+    background-color: $red-dark;
+    font-size: 10px;
+    border: 1px solid rgba($white,.5);
+    color: $white;
+    display: none;
+    white-space: nowrap;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    padding: 2px 10px 2px 5px;
+}
+.bvalidator_errmsg .bvalidator_close_icon {
+    margin-left: 5px;
+    margin-top: -2px;
+    font-family: Verdana, Geneva, sans-serif;
+    font-weight: bolder;
+    color: $white;
+    cursor: pointer;
+    font-size: 12px;
+}
+.bvalidator_errmsg em {
+    display: none;
+    border-color: $red-dark transparent transparent;
+    border-style: solid;
+    border-width: 10px 10px 0;
+    height: 0;
+    width: 0;
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+}
+
+// For multiselect field option
+.ms-options-wrap {
+    max-width: 100%;
+}
+
+.ms-options-wrap,
+.ms-options-wrap * {
+    box-sizing: border-box;
+}
+
+.ms-options-wrap {
+    > button:focus, > button {
+        position: relative;
+        width: 100%;
+        height: 70px;
+        margin-top: 1px;
+        padding-left:20px;
+        outline: none;
+        white-space: nowrap;
+        color:$white;
+        font-size: 30px;
+        font-weight: 300;
+        text-align: left;
+        text-transform: uppercase;
+        border: none;
+        background-color: $blue-mid;
+        
+        @include xxl {padding-left:30px;}
+    }
+    
+    > .ms-options {
+        position: absolute;
+        left: 0;
+        width: 100%;
+        margin-top: 1px;
+        margin-bottom: 20px;
+        background: $blue-2;
+        z-index: 2000;
+        padding: 10px;
+        min-height: 100% !important;
+        
+        > .ms-search {
+            
+            input {
+                width: 100%;
+                padding: 4px 5px;
+                border: none;
+                border-bottom: 1px groove;
+                outline: none;
+                
+            }
+        }
+        
+        .ms-selectall {
+            display: inline-block;
+            font-size: .9em;
+            text-transform: lowercase;
+            text-decoration: none;
+            
+            &.global {
+                margin: 4px 5px;
+            }
+            
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+        
+        > ul {
+            @include list;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            
+            > li.optgroup {
+                padding: 5px;
+                
+                .label {
+                    display: block;
+                    padding: 5px 0 0 0;
+                    font-weight: bold;
+                }
+            }
+            
+            > li.optgroup + li.optgroup {border-top: 1px solid #aaa}
+            
+            label {
+                position: relative;
+                display: inline-block;
+                width: 100%;
+                padding: 4px;
+                margin: 1px 0;
+                text-transform: uppercase;
+                font-size: .85em;
+                text-align: center;
+                color:$white;
+                
+                &:hover {
+                    background-color: $blue-dark;
+                }
+            }
+            
+            img {
+                max-height: 22px;
+            }
+            
+            input[type="checkbox"] {
+                margin-right: 5px;
+                position: absolute;
+                left: 4px;
+                top: 15px;
+                
+                display:none;
+            }
+            
+            > li {
+                flex: 0 0 33%;
+                max-width: 33%;
+                
+                &.selected {
+                    
+                    label {background-color: $blue-dark;}
+                }
+                
+            }
+        }
+        
+    }
+}

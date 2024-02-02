@@ -1,0 +1,231 @@
+.sticky-nav {
+	position:fixed;
+	z-index: 9;
+	left:0;
+	top:0;
+	opacity:0;
+	width: 100%;
+	background-color: $white;
+	pointer-events: none;
+	transform: translateY(-100%);
+	transition: all 0.2s ease;
+    
+    .masthead {
+        
+        &:after {
+            @include sm {display: none;}
+        }
+        
+        @include sm {padding-top:0;}
+        
+        @include lg {padding-bottom:0;}
+        
+        .header-container {
+            justify-content: center;
+            align-items: stretch;
+        }
+        
+        .site-branding, .sticky-form-container,
+        .site-navigation {
+            @include skew(-10deg);
+            justify-content: center;
+            align-items: stretch;
+            > * {
+                @include skew(10deg);
+            }
+        }
+        
+        .site-branding {
+            flex: 0 0 42%;
+            max-width: 42%;
+            
+            @include sm {
+                flex: 0 0 44%;
+                max-width: 44%;
+                padding-right:15px;
+            }
+            
+            @include md {
+                flex: 0 0 20%;
+                max-width: 20%;
+                padding-right:15px;
+            }
+            
+            @include lg {
+                flex: 0 0 18%;
+                max-width: 18%;
+                align-self: center;
+                padding-right: 0;
+            }
+			
+			@include xl {flex: 0 0 15%;max-width: 15%;}
+            
+            a {
+                padding:6px 10px;
+                img {
+                    max-height: auto;
+                    
+                    @include sm {max-height: 57px;}
+                    
+                    @include md {max-height: 32px;}
+                    
+                    @include lg {max-height: 42px;}
+                    
+                    @include xl {max-height: 62px;}
+                }
+                
+            }
+            
+        }
+        
+        .sticky-form-container {
+            flex: 0 0 30%;
+            max-width: 30%;
+            
+            @include sm {flex: 0 0 34%;max-width: 34%;}
+            
+            @include md {flex: 0 0 38%;max-width: 38%;}
+            
+            @include lg {flex: 0 0 62%;max-width: 62%;}
+			
+			@include xl {flex: 0 0 68%;max-width: 68%;}
+            
+            .quote-button {
+                a {
+                    color:$white;
+                    font-size: 15px;
+                    display: block;
+                }
+            }
+            
+            .sticky-form  {
+                flex-direction: column;
+                width: 94%;
+                max-width: 810px;
+                
+                .form-title {
+                    padding:5px 0;
+                    font-size: 15px;
+                    line-height: 1;
+                }
+                
+                form {
+                    display: flex;
+                    padding-bottom:10px;
+                }
+                
+                .form-group {
+                    width:20%;
+                    margin-bottom:0;
+                    padding-right:10px;
+                    
+                    .form-control {
+                        height: 38px;
+                        font-size: 15px;
+                        text-transform: uppercase;
+                    }
+					
+					&.submit {
+						padding-right:0;
+	                    
+	                    .btn {
+	                        padding: 8px 15px;
+	                        height: 38px;
+	                        white-space: nowrap;
+	                    }
+					}
+                    
+                }
+            }
+            
+        }
+        
+        .site-navigation {
+            flex: 0 0 28%;
+            max-width: 28%;
+            
+            @include sm {
+                flex: 0 0 22%;
+                max-width: 22%;
+                margin-right:-20px;
+            }
+            
+            @include md {flex: 0 0 42%;max-width: 42%;}
+            
+            @include lg {flex: 0 0 20%;max-width: 20%;}
+			
+			@include xl {flex: 0 0 17%;max-width: 17%;}
+            
+            .top-nav {
+				padding-left:15px;
+				
+                @include sm {justify-content: center;}
+                
+                @include md {justify-content: space-around;}
+                
+                i {
+                    @include sm {display: block;}
+                }
+                
+            }
+            
+            a {color:$white;}
+            
+            .mburger {
+                --mb-button-size: 46px;
+                height:44px;
+                
+                @include sm {margin-right: 0;}
+                
+            }
+            
+        }
+        
+        .phone-box {
+            @include lg {
+                flex-direction: column;
+            }
+        }
+        
+        .phone {
+            @include md {
+                font-size: 12px;
+                font-weight: normal;
+                line-height: 1;
+            }
+            
+            span {
+                @include md {
+                    color:$white;
+                    font-size: 18px;
+                    font-weight: bold;
+                }
+            }
+            
+            &:first-child {
+                @include md {padding-right:25px;}
+                
+                @include lg {padding-right:0;margin-bottom: 5px;}
+            }
+            
+        }
+        
+        &:after {
+            content:'';
+            position: absolute;
+            right:0;
+            top:0;
+            height:100%;
+            width:50%;
+            background-color: $blue-2;
+            z-index: -1;
+        }
+        
+    }
+	
+	&.sticky {
+		opacity:1;
+		transform: translateY(0);
+		pointer-events: all;
+	}
+}

@@ -1,0 +1,120 @@
+.section-reviews {
+    padding-top: 40px;
+
+    @include md {padding-top:60px;}
+    
+    @include lg {padding:100px 0;}
+    
+    .reviews-flex-lg {
+        
+        @include lg {
+            display: flex;
+            justify-content: flex-end;
+        }
+        
+    }
+    
+    .review-gradient {
+        content:'';
+        position: absolute;
+        top:0;
+        right:0;
+        z-index: 0;
+        width:100%;
+        height: 230px;
+        background: -moz-linear-gradient(top,  rgba($white,1) 0%, rgba($white,0.5) 35%, rgba($white,0) 100%);
+        background: -webkit-linear-gradient(top,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+        background: linear-gradient(to bottom,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='#00ffffff',GradientType=0 );
+        
+        &.bottom {
+            top:auto;
+            bottom:0;
+            background: -moz-linear-gradient(bottom,  rgba($white,1) 0%, rgba($white,0.5) 35%, rgba($white,0) 100%);
+            background: -webkit-linear-gradient(bottom,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+            background: linear-gradient(to top,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='#00ffffff',GradientType=0 );
+        }
+        
+        &.right {
+            width:380px;
+            height:100%;
+            background: -moz-linear-gradient(right,  rgba($white,1) 0%, rgba($white,0.5) 35%, rgba($white,0) 100%);
+            background: -webkit-linear-gradient(right,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+            background: linear-gradient(to left,  rgba($white,1) 0%,rgba($white,0.5) 35%,rgba($white,0) 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$white', endColorstr='#00ffffff',GradientType=0 );
+        }
+    }
+
+    .reviews-content {
+        position: relative;
+        z-index: 1;
+
+        .section-header {
+            margin-bottom:40px;
+            
+            @include sm {margin-bottom:75px;}
+            
+        }
+
+        .review-body-wrap {
+            position: relative;
+            max-width: 330px;
+            padding:15px 20px 40px;
+            border:1px solid $gray;
+            background-color: $white;
+            
+            @include sm {
+                max-width: 380px;
+                padding: 50px 45px 75px;
+            }
+            
+            @include md {max-width: 550px;}
+            
+        }
+
+        .review-title.h1 {
+            margin:5px auto;
+            padding:10px 0;
+        }
+
+        .review-author {
+            display: block;
+            padding:10px 30px 0;
+            margin-top:20px;
+            font-size: 20px;
+        }
+
+        .review-stars {
+            font-size: 30px;
+            
+            img {
+                width:30px;
+                margin:0 3px;
+                
+                @include md {width:35px;}
+            }
+            
+            i {
+                margin:0 3px;
+            }
+        }
+        
+        &.center-all {
+            @include lg {justify-content: flex-end;}
+        }
+
+    }
+    
+    .reviews-image {
+        position: absolute;
+        top:0;
+        left:0;
+        height:100%;
+        width:100%;
+        @include background($position:top center);
+        
+        @include xxxl {width: 95%;}
+        
+    }
+}

@@ -1,0 +1,249 @@
+.site-navigation {
+	position:relative;
+	width:100%;
+	text-align: center;
+    flex: 0 0 30%;
+    max-width: 30%;
+    
+    @include sm {flex: 0 0 60%;max-width: 60%;}
+    
+    @include lg {flex: 0 0 70%;max-width: 70%;}
+	
+    ul {
+		display: flex;
+		flex-direction: row;
+		width:auto;
+		padding:0;
+		margin:0;
+		
+        li {
+			position:relative;
+			display: flex;
+			align-items: center;
+			text-align: center;
+			@include transition(0.3s);
+			
+            &:hover, &:active, &:focus,
+			&.current_page_item {
+			    
+			    >a {
+			    	color:$blue-light;
+			    }
+			}
+			
+            &:last-child ul {
+				left:auto;
+				right:0;
+			}
+			
+            a {
+				display: block;
+				padding:10px;
+				@include font-size(1.2,1);
+				font-weight: 900;
+				color:$blue;
+				text-transform: uppercase;
+				text-decoration: none !important;
+			}
+		}
+		
+        ul {
+		    display: none;
+		    position: absolute;
+		    z-index: 99;
+		    width: 275px;
+		    background: $blue-light;
+		    left: 0;
+			top:39px;
+		    text-align:left;
+		    @include box-shadow(10px, 10px, 20px, rgba(0,0,0,0.15));
+		    
+            li {
+		    	display: block;
+				padding: 0;
+		    	margin: 0;
+				width: 100%;
+				text-align:left;
+				border-top:1px solid rgba($blue, .1);
+				
+                a {
+					padding:8px 15px;
+					color:$white;
+					font-weight: normal;
+					text-transform: none;
+					@include font-size(1);
+					letter-spacing: 0;
+					text-shadow: none !important;
+					
+                    &:hover, &:active, &:focus {
+					    background-color: $red;
+					    color:$white;
+					}
+				}
+				
+				&:first-child {
+					border-top:none;
+				}
+			}
+			
+            ul {
+				display: none !important;
+			}
+		}
+	}
+	
+    ul li:hover>ul {
+	    display: block;
+	    animation: fadein .25s;
+	}
+    
+    .top-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height:100%;
+        padding-right: 15px;
+        
+        @include sm {justify-content: flex-end;}
+		
+		@include xxl {
+			margin-right:1.5%;
+			padding-right: 25px;
+		}
+        
+        .mburger {
+            
+            @include sm {margin-right: 20px;}
+            
+            b {height:2px;}
+        }
+        
+        .menu {
+            
+            >li {
+                padding:0 15px;
+				
+				@include xxl {padding: 0 25px;}
+                
+                >* {
+                    display: inline-block;
+                    vertical-align: middle;
+                }
+                
+                a {@include primary-font;}
+                
+                >a {
+                    font-size: 18px;
+                    font-weight: 400;
+                    padding:5px;
+                }
+                
+                &:before {
+                    color: $blue;
+                    font-size: 15px;
+					@include transition(0.3s);
+                }
+				
+				&:hover, &:active, &:focus,
+				&.current_page_item {
+					
+					&:before{
+						color: $blue-light;
+					}
+					
+				}
+                
+            }
+            
+        }
+    }
+    
+    .main-nav {
+        justify-content: flex-end;
+        padding-right: 10px;
+		
+		@include xxl {
+			margin-right:1.5%;
+		}
+		
+		ul.menu {
+			display: flex;
+			align-items: center;
+			
+			>li {
+				height:43px;
+				padding:0 10px;
+				
+				@include xxl {padding:0 15px;}
+				
+				>a {
+					position: relative;
+					padding:15px 0 10px;
+					
+					@include xxl {font-size: 25px;}
+					
+					&:after {
+						content: '';
+						position: absolute;
+						bottom:0;
+						left:0;
+						width: 100%;
+						height:5px;
+						background-color: $blue-light;
+						@include transition(0.3s);
+						opacity: 0;
+					}
+				}
+				
+				&.current_page_item, &.current_page_parent {
+					
+					>a {
+						color:$red;
+						padding-top: 15px;
+						
+						&:after {
+							opacity: 0;
+						}
+					}
+				}
+				
+				&:hover, &:active, &:focus {
+					
+					>a {
+						color:$blue-light;
+						padding-top: 10px;
+						
+						&:after {
+							opacity: 1;
+						}
+					}
+				}
+                ul {
+                    
+                    li {
+                        
+                        &.current_page_item {
+                            
+                            >a {
+                                color:$white;
+                                background-color: $red;
+                            }
+                        }
+                    }
+                }
+			}
+			
+		}
+    }
+}
+
+@keyframes fadein {
+    from {
+	    opacity: 0;
+	    margin-top: -6px;
+	}
+	to {
+	    opacity: 1;
+	    margin-top: -1px;
+	}
+}

@@ -1,0 +1,125 @@
+.sticky-menu-lightbox {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    // padding:$gutter-padding 45px;
+    width: 100%;
+    // margin: $gutter-padding auto;
+    display: block;
+    transition: ease all 0.5s;
+    
+    .close {
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        font-size: 22px;
+        line-height: 1;
+        text-shadow: none;
+        z-index: 9;
+        opacity: .7;
+        color:$red-bright;
+        
+        i {padding-left:10px;}
+        
+        &:hover {
+            color: $white;
+            opacity: 1;
+        }
+    }
+    
+    .lightbox-inner {
+        
+        .lightbox-column {
+            color:$white;
+            
+            @include lg {margin:0 5%;}
+            
+            @include xxxl {margin:0 8%;}
+            
+            .h1, a {
+                color:$white;
+            }
+            
+            .h1 {
+                font-weight: 600;
+            }
+            
+            a {
+                display: block;
+                padding:5px 0;
+                
+                &:hover {
+                    color:$blue-light;
+                }
+            }
+            
+            ul {
+                @include list;
+                
+                >li {
+                    width:100%;
+                    @include primary-font;
+                    font-weight: normal;
+                    line-height: 1.55em;
+                    
+                    .sub-menu,&:before {display: none !important;}
+                }
+                
+                &.main-menu {
+                    
+                    >li {
+                        font-weight: bold;
+                    }
+                }
+            }
+            
+            .lightbox-info {
+                font-weight: 300;
+            }
+            
+            &:last-child {
+                margin-top:20px;
+                
+                @include md {margin-top:0;}
+            }
+        }
+    }
+    
+    &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+.sticky-open.modal-open {
+    
+    .sticky-menu-lightbox {
+        position: fixed;
+        height:80%;
+        margin:0;
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+        padding:15px;
+        background: transparent;
+    
+        &.show {
+            
+            @include md {top:8%;}
+            
+            @include lg {top:10%;}
+        }
+    }
+    
+    .modal-backdrop {
+        background-color: $blue-dark;
+        
+        &.show {
+            opacity: .9;
+        }
+    }
+}

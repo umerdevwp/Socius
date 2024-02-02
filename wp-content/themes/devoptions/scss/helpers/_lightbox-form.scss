@@ -1,0 +1,296 @@
+$gutter-padding: 10px;
+$gutter-padding-sm: 20px;
+$gutter-padding-md: 1vw;
+$form-width-md: 30%;
+
+.lightbox-form, .lightbox-product-form {
+    position: absolute;
+    top: 0;
+    z-index: 9;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    padding:$gutter-padding 45px;
+    width: 100%;
+    margin: $gutter-padding auto;
+    display: block;
+    transition: ease all 0.5s;
+
+    @include md {
+        margin: 3vw auto;
+        padding: 0 $gutter-padding-sm;
+    }
+
+    @include lg {
+        display: inline-block;
+        vertical-align: middle;
+        margin: 0;
+        padding: 0;
+        width: $form-width-md;
+    }
+
+    @include xl {
+        height: 39vw;
+        background-color: $blue;
+    }
+
+    &.shown, &.show {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: all;
+    }
+    
+    .close {
+        position: absolute;
+        top: -5px;
+        right: 5px;
+        line-height: 1;
+        z-index: 9;
+        color: $white;
+        opacity: .7;
+        
+        &:hover {
+            color: $white;
+            opacity: 1;
+        }
+    }
+    
+    .header-form {
+        max-width: 570px;
+        width:auto;
+        
+        @include lg {padding:15px;}
+        
+        @include xl {
+            max-width: 100%;
+            height: 100%;
+            padding: 15px 45px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        &:before, &:after {
+            @include xxxl {
+                border-width:220px;
+                top:-145px;
+            }
+            
+            @include yl {
+                border-width:250px;
+                top:-170px;
+            }
+        }
+        
+        .form {
+            margin:0 auto 15px;
+            
+            .form-text-wrap {
+                position: relative;
+                display: block;
+                // display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                margin-bottom: 20px;
+                color:$white;
+                text-align: center;
+                z-index: 1;
+                
+                @include lg {
+                    width:80%;
+                    margin: 20px auto;
+                }
+                
+                .form-title {
+                    font-size: 24px;
+                    font-weight: 700;
+                    line-height: 1;
+                    margin-bottom: 8px;
+                    
+                    @include sm {font-size: 38px;}
+                    
+                    @include md {font-size: 41px;}
+                    
+                    @include lg {font-size: 35px;}
+                    
+                    @include xl {font-size: 38px;}
+                    
+                    span {
+                        display: block;
+                        color: $blue-light;
+                        
+                        @include lg {font-size: 40px;}
+                        
+                        @include xl {font-size: 52px;}
+                    }
+                    
+                }
+                
+                .form-text {
+                    display: block;
+                    padding:10px 0;
+                    font-size: 18px;
+                    
+                    @include md {
+                        padding:0;
+                        margin-top:0;
+                    }
+                }
+            }
+            
+            .form-group {
+                margin-bottom:10px;
+                padding:0 5px;
+                
+                &.whole {
+                    flex:0 0 100%;
+                    max-width: 100%;
+                }
+                
+                &.half {
+                    flex:0 0 50%;
+                    max-width: 50%;
+                }
+                
+                &.special-select {
+                    
+                    .form-control {
+                        color:$white;
+                        font-size: 24px;
+                        font-weight: 300;
+                        height: 70px;
+                        border: none;
+                        background-color: $blue-2;
+                        
+                        @include xxl {font-size: 30px;}
+                    }
+                    
+                    &:after {
+                        color:$white;
+                        font-size: 30px;
+                        right:20px;
+                    }
+                }
+                
+            }
+            
+        }
+    }
+    
+    &.cta-form {
+        left:0;
+        height:auto;
+        padding:0 !important;
+        
+        @include lg {left:32%;}
+    }
+}
+
+.lightbox-form-container{
+
+    .fancybox-caption,
+    .fancybox-infobar,
+    .fancybox-navigation .fancybox-button,
+    .fancybox-toolbar {
+        position: fixed;
+
+        @include lg {
+            position: absolute;
+        }
+    }
+
+    .fancybox-slide--image {
+        padding: 0;
+
+        @include md {
+            padding: 44px 0;
+        }
+    }
+
+   &.fancybox-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        font-family: inherit;
+
+        @include lg {
+            display: block;
+        }
+
+        .lightbox-form {
+            position: relative;
+            
+            .close {display: none;}
+        }
+
+        .fancybox-inner {
+            position: relative;
+            left: 0;
+            right: initial;
+            overflow: visible;
+            display: block;
+            margin: 0 auto;
+            height: 90vw;
+            width: 100%;
+
+            @include md {
+                height: 60vw;
+                width: calc(100% - #{$gutter-padding-sm} * 2);
+            }
+
+            @include lg {
+                right: $gutter-padding-md;
+                margin: 0;
+                display: inline-block;
+                vertical-align: middle;
+                height: 100%;
+                width: calc(100% - 360px - #{$gutter-padding-md});
+            }
+
+            @include lg {
+                width: calc(100% - #{$form-width-md} - #{$gutter-padding-md});
+            }
+        }
+
+        .fancybox-toolbar div {
+            display: inline-block;
+            height: 44px;
+            line-height: 42px;
+            background: rgba(30, 30, 30, 0.6);
+            color: #ccc;
+            font-size: 12px;
+            font-weight: bold;
+            min-width: 42px;
+            text-align: center;
+            white-space: nowrap;
+        }
+        
+        .fancybox-navigation {
+            
+            .fancybox-button {
+                top:23%;
+                background:$red;
+                
+                @include xl {top:19%;}
+                
+                @include xxl {top:14%;}
+                
+                @include xxxl {top:10%;}
+                
+                @include yl {top:5%;}
+                
+                &.fancybox-button--arrow_left {
+                    left: auto;
+                    right: 44px;
+                }
+            }
+        }
+    }
+    
+    .fancybox-button--arrow_right,
+    .fancybox-button--arrow_left{
+        text-align: center;
+    }
+}

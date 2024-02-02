@@ -1,0 +1,63 @@
+//Base button styles
+.btn,
+.mce-content-body a.btn,
+.mce-content-body a[data-mce-selected]{
+    padding: 12px 30px;
+    margin: 0;
+    white-space:normal;
+    text-decoration: none !important;
+    border-radius: 0;
+    border:none;
+    text-transform: uppercase;
+    @include transition(0.3s);
+    font-size: .75em;
+    font-weight: 700;
+    line-height: 1rem;
+    display: inline-block;
+    
+    @include sm {font-size: 1.1rem;padding: 15px 40px;}
+    
+    @include md {font-size: 16px;}
+    
+    @include xxl {padding: 18px 43px;}
+    
+    &.sm-btn {
+        padding: 6px 15px;
+        
+        @include sm {font-size: 1rem;padding: 6px 15px;}
+        
+        @include md {font-size: 16px;}
+        
+        @include xxl {padding: 8px 22px;}
+    }
+}
+
+.btn-primary {
+    color: $white;
+    background-color: $red;
+
+    &:hover, &:focus, &:active {
+        color: $white;
+        background-color: $red-dark;
+    }
+}
+.btn-secondary {
+    color: $blue;
+    font-weight: 400;
+    background-color: $aqua;
+
+    &:hover, &:focus, &:active {
+        color: $white;
+        background-color: $blue-light;
+    }
+}
+
+.btn-dark {
+    color: $white;
+    background-color: $blue;
+
+    &:hover, &:focus, &:active {
+        color: $white;
+        background-color: $blue-2;
+    }
+}

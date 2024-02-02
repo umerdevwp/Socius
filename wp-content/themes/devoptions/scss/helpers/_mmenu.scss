@@ -1,0 +1,61 @@
+#mmenu:not( .mm-menu ) {
+	display: none;
+}
+.mm-navbar .mm-title {
+	font-size: 0.9;
+	line-height: 1.25;
+}
+.mm-listview {
+	font-size: 1;
+	line-height: 1.25;
+    
+    a {@include primary-font();}
+}
+
+.mm-menu > .mm-panels,
+.mm-panel, .mm-panels, .mm-navbar {
+	background:$blue !important;
+}
+.mm-menu .mm-navbar a, .mm-menu .mm-navbar>*,
+.mm-navbar, .mm-menu .mm-btn:after, .mm-menu .mm-btn:before,
+.mm-listview>li, .mm-listview>li .mm-next, .mm-listview>li .mm-next:before, .mm-listview>li:after,
+.mm-menu .mm-listview>li .mm-next:after {
+	border-color:$white !important
+}
+.mm-menu .mm-listview>li[class^="fa"] {
+	font-weight: inherit;
+}
+.mm-menu .mm-listview>li[class^="fa"]:before {
+	display: none !important;
+}
+.mm-listview>li:not(.mm-divider):after {
+	left:0 !important;
+}
+.mm-menu .mm-listview a, .mm-navbar .mm-title, .mm-navbar__title, .mm-navbar {
+	color:$white !important;
+}
+.mm-panels .mm-listview a:hover {
+	color:rgba($white,0.5) !important;
+}
+
+//move close btn to right corner
+.mm-btn.mm-btn_close.mm-navbar__btn {
+    left: auto;
+    right: 0;
+}
+
+//limit fullscreen to phone only
+.mm-menu_fullscreen {
+	@include sm {
+	    width: 80%;
+	    min-width: 240px;
+	    max-width: 440px;
+	}
+}
+
+//Remove if needed to show on desktop
+#mmenu {
+	// @include xl {
+	// 	display: none;
+	// }
+}

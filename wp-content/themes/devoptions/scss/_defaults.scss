@@ -1,0 +1,128 @@
+@import "mixins";
+@import "variables";
+
+html,
+body {
+    // overflow-x: hidden;
+}
+
+*:focus {
+    outline: 0 !important;
+}
+
+a img {
+    border:none;
+}
+a img,
+a:active {
+    outline:none;
+}
+
+a {
+    color: $blue-light;
+    text-decoration: none;
+    @include transition(0.25s);
+}
+a:active, a:focus, a:hover {
+    color: $blue;
+    text-decoration: none;
+}
+a[href^=tel] {
+    @include md {
+        pointer-events:none;
+    }
+}
+
+.hide {
+    display:none !important;
+}
+.nopadding {padding:0;}
+
+.fade.active, .fade.visible, .fade.animated {
+    transition: opacity .75s;
+    opacity: 1;
+}
+// @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+// #page {overflow: hidden;}
+
+#main,
+#colophon,
+.container {
+    margin: 0 auto;
+    position:relative;
+}
+// .container {
+//     @include xxxl {
+//         width:1470px;
+//     }
+//     @include yl {
+//         width:1570px;
+//     }
+// }
+// .container-fluid {
+//     @include xl {
+//         padding:0 6%;
+//     }
+//     @include xxl {
+//         padding:0 8.33333%;
+//     }
+//     &.inherit {
+//         position:relative;
+//         height:inherit;
+//     }
+// }
+
+.modal-open {
+    
+    .modal-backdrop {
+        
+        &.show {
+            z-index: 8;
+        }
+    }
+    
+    .lightbox-form, .lightbox-product-form {
+        
+        &.show {
+            position: fixed;
+            top:10%;
+            padding:15px 0;
+        }
+    }
+}
+
+.browsehappy {
+    text-align: center;
+    padding:25px;
+    background-color: #eee;
+    margin-bottom: 0;
+}
+
+//Animation delays
+.to-animate {
+    animation-duration:0.75s;
+    @include lg {
+        animation-duration: 1s;
+    }
+    // &.fast {
+    //     animation-duration: 0.5s;
+    // }
+}
+
+.delay-200ms {
+    -webkit-animation-delay:0.2s;
+    animation-delay:0.2s;
+}
+.delay-400ms {
+    -webkit-animation-delay:0.4s;
+    animation-delay:0.4s;
+}
+.delay-600ms {
+    -webkit-animation-delay:0.6s;
+    animation-delay:0.6s;
+}
+.delay-800ms {
+    -webkit-animation-delay:0.8s;
+    animation-delay:0.8s;
+}

@@ -1,0 +1,172 @@
+.site-footer {
+    
+    .ftr-top {
+        color:$white;
+        font-size: 15px;
+        padding-bottom:20px;
+        
+        @include sm {padding:0 15px 20px;}
+        
+        @include md {
+            font-size: 1em;
+            line-height: 1.3em;
+        }
+        
+        @include lg {padding:30px 0;}
+        
+        a {
+            color:$white;
+            
+            &:hover {
+                color: $blue-light;
+            }
+        }
+        
+        ul {@include list;}
+        
+        .ftr-logo {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+            
+            @include lg {
+                flex-direction: row;
+                align-items: flex-start;
+                padding: 0;
+                margin: 0;
+            }
+            
+            .logobox {
+                width:92%;
+                margin:0 auto;
+                margin-top: -20px;
+                padding-top: 20px;
+                padding-bottom: 20px;
+                border: 1px solid $gray;
+                background-color:$white;
+                
+                @include sm {
+                    width:75%;
+                    padding-top: 35px;
+                    padding-bottom: 35px;
+                    max-width: 480px;
+                }
+                
+                @include lg {
+                    width:100%;
+                    max-width: none;
+                    margin-top: -50px;
+                }
+            }
+            
+            img {
+                width:75%;
+            }
+        }
+        
+        .ftr-info-box, .ftr-menu {
+            text-align: center;
+            
+            @include lg {text-align: left;}
+        }
+        
+        .ftr-info-box {
+            
+            @include sm-max {
+                flex: 0 0 100%;
+                max-width: 100%;
+            }
+            
+            @include lg {padding-left: 35px;}
+            
+            .ftr-phone {
+                font-size: 2em;
+                
+                @include md {font-size: 29px;}
+                
+                @include lg {margin-bottom: 5px;}
+            }
+            
+            .ftr-address {
+                
+                @include lg {margin-bottom: 5px;}
+            }
+            
+            .ftr-directions {
+                a {
+                    display: table;
+                    width: auto;
+                    margin: 0 auto;
+                    
+                    @include lg {margin-left:0;}
+                    
+                    > * {
+                        display: table-cell;
+                        vertical-align: middle;
+                    }
+                }
+                
+                i {
+                    font-size: 26px;
+                    padding-right: 10px;
+                }
+            }
+        }
+        
+        .ftr-social {
+            margin:15px 0;
+            
+            @include lg {margin:20px 0 0;}
+            
+            .smedia {
+                display: flex;
+                justify-content: center;
+                
+                @include lg {justify-content: flex-start;}
+                
+                a {
+                    padding:0 5px;
+                }
+            }
+        }
+        
+        .ftr-menu {
+            @include sm-max {
+                flex: 0 0 50%;
+                max-width: 50%;
+            }
+            
+            .menu {
+                
+                li {
+                    
+                    a {
+                        display: block;
+                        padding:3px 0;
+                    }
+                }
+            }
+        }
+    }
+    
+    .ftr-bottom {
+        color:$white;
+        font-size: 15px;
+        text-align: center;
+        padding: 20px 15px 70px;
+        border: 1px solid $aqua;
+        
+        @include md {font-size: 1em;}
+        
+        @include lg {padding:20px 15px;}
+        
+        .site-info {
+            
+            span {padding-left:10px;}
+        }
+    }
+}
